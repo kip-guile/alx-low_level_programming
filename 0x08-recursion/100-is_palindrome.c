@@ -31,3 +31,17 @@ int palind3(char *a, int l)
 		return (1);
 	return (palind3(a + 1, l - 2));
 }
+/**
+ * is_palindrome - checks if a string is a palindrome
+ * @s: string to evaluate
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int is_palindrome(char *s)
+{
+	int l;
+
+	l = palind2(s, 0);
+	return (palind3(s, l));
+}
